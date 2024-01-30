@@ -18,6 +18,8 @@ RUN apt-get update && \
     libmpc-dev && \
     rm -rf /var/lib/apt/lists/*
     
+RUN apt-get update && apt-get -y install wget make
+    
 RUN wget https://crypto.stanford.edu/pbc/files/pbc-0.5.14.tar.gz
 RUN tar -xvf pbc-0.5.14.tar.gz
 RUN cd pbc-0.5.14 && ./configure && make && make install
