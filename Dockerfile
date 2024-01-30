@@ -1,5 +1,5 @@
 FROM python:3.7-stretch
-FROM debian:stretch
+FROM debian:bullseye-slim
 
 # Default cluster arguments. Override with "-e"
 #
