@@ -25,6 +25,10 @@ RUN cd pbc-0.5.14 && ./configure && make && make install
 ENV LIBRARY_PATH /usr/local/lib
 ENV LD_LIBRARY_PATH /usr/local/lib
 
+RUN apt-get update && apt-get -y install git
+RUN apt-get update && apt-get -y install python3 python3-pip
+RUN pip3 install gevent setuptools gevent numpy ecdsa pysocks gmpy2 zfec gipc pycryptodemo coincurve
+
 RUN git clone https://github.com/JHUISI/charm.git
 RUN cd charm && ./configure.sh && make install
 
